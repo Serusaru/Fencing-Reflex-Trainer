@@ -1,0 +1,82 @@
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    margin:0;
+    padding: 0;
+    gap: 82%;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 20px; 
+    border-bottom: 1px solid rgb(71, 71, 71);
+}
+
+header span{
+    color: rgb(171, 226, 88);
+}
+
+body{
+
+}
+
+#title{
+    display: flex;
+    color: rgb(171, 226, 88);
+}
+
+#intro{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-family: 'Inter', sans-serif;
+    gap: 8px;
+}
+
+#intro h1, #intro p{
+    margin:0;
+}
+
+#intro p{
+    font-size: 15px;
+}
+
+#settings{
+display: grid;
+grid-template-columns: diff none rounds;
+font-family: 'Inter', sans-serif;
+margin-top: 20px;
+margin-bottom: 5px;
+}
+
+#game{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    border: 15px double rgb(71, 71, 71);
+    border-radius: 1.5rem;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+#instruction{
+    text-align: center;
+}
+
+#stats p{
+    display: grid;
+    grid-template-columns: last avg best;
+    font-family: 'Inter', sans-serif;
+    border: 2px solid rgb(71, 71, 71);
+    border-radius: 1.5rem;
+}
+
+#history{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta >
+        <title>Fencing Reflex Trainer</title>
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+        <script src="index.js"></script>
+    </head>
+
+<body>
+    <header>
+        <h2>Reflex/Fencing</h2>
+        <p><span>●</span> TRAINING MODE</p>
+    </header>
+
+    <main>
+        <section id="intro">
+            <p id="title"> <b>REACTION TRAINER</b></p>
+            <h1>Sharpen your reflexes.</h1>
+            <p>React to the command. Track your speed. Build consistency</p>
+        </section>
+
+        <section id="settings">
+            <label for="diff">DIFFICULTY</label>
+            <select name="diff" id="diff">
+            <option value="beginner">Beginner</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="advanced">Advanced</option>
+            </select>
+
+            <label for="rounds">ROUNDS</label>
+            <select name="rounds" id="rounds">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            </select>
+        </section>
+
+        <section id="game">
+            <p id="gameRound">ROUND 0/10 </p>
+            <h1 id="command">Ready?</h1> 
+            <p id="instructions"> <b>——————————————</b> <br> Start a drill when you're ready.</p>
+            <button id="start">Start Training</button>
+            <button id="reset">Reset</button>
+        </section>
+        
+        <section id="stats">
+            <p>LAST</p>
+            <p>AVERAGE</p>
+            <p>BEST</p>
+        </section>
+
+        <section id="history">
+            <p>RECENT REACTIONS</p>
+            <button id="clear">Clear</button>
+            <p id="attempt">No attempts yet</p>
+        </section>
+    </main>
+</body>
+</html>
