@@ -15,8 +15,11 @@ header span{
     color: rgb(171, 226, 88);
 }
 
-body{
-
+body {
+    background-color: #0f1115;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
 }
 
 #title{
@@ -31,6 +34,7 @@ body{
     justify-content: flex-start;
     font-family: 'Inter', sans-serif;
     gap: 8px;
+     margin: 30px 5% 20px;
 }
 
 #intro h1, #intro p{
@@ -41,42 +45,140 @@ body{
     font-size: 15px;
 }
 
-#settings{
-display: grid;
-grid-template-columns: diff none rounds;
-font-family: 'Inter', sans-serif;
-margin-top: 20px;
-margin-bottom: 5px;
+#settings {
+    display: grid;
+    grid-template-columns: 200px 200px;
+    gap: 20px;
+    justify-content: center;
+    margin: 30px 0;
 }
 
-#game{
+#settings div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#settings select {
+    background-color: #15181d;
+    color: white;
+    border: 1px solid #30343b;
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+#settings select:hover {
+    border-color: rgb(171, 226, 88);
+}
+
+#settings select:focus {
+    border-color: rgb(171, 226, 88);
+}
+
+#settings label {
+    color: #8f969f;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#game {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
     font-family: 'Inter', sans-serif;
+
     border: 15px double rgb(71, 71, 71);
     border-radius: 1.5rem;
-    margin-left: 10%;
-    margin-right: 10%;
+
+    margin: 20px 5%;
+    padding: 60px 20px;
 }
 
 #instruction{
     text-align: center;
 }
 
-#stats p{
-    display: grid;
-    grid-template-columns: last avg best;
+#start,
+#reset {
     font-family: 'Inter', sans-serif;
-    border: 2px solid rgb(71, 71, 71);
-    border-radius: 1.5rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 12px 24px;
 }
 
-#history{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+#start {
+    background-color: rgb(171, 226, 88);
+    color: #101010;
+    border: none;
+}
+
+#reset {
+    background-color: transparent;
+    color: white;
+    border: 1px solid rgb(71, 71, 71);
+    margin-top: 8px;
+}
+
+#stats {
+    display: grid;
+    grid-template-columns: repeat(3, 200px);
     justify-content: center;
+    gap: 20px;
+
     font-family: 'Inter', sans-serif;
+}
+
+#stats p {
+    border: 2px solid rgb(71, 71, 71);
+    border-radius: 1.5rem;
+    padding: 20px;
+    margin: 0;
+}
+
+#history {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Inter', sans-serif;
+}
+
+#history h2 {
+    margin: 0;
+}
+
+#history button {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#history {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+}
+
+#historyText p {
+    margin: 0;
+}
+
+#attempt {
+    margin-top: 5px !important;
+    font-size: 14px;
+}
+
+#clear {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 6px;
 }
