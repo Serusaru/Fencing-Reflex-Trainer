@@ -39,7 +39,7 @@ function nextRound(){
         gameRound.textContent = "ROUND " + totalRounds + "/" + totalRounds;
         startTraining.disabled = false;
         waitforKey = false;
-        avg.textContent = "AVERAGE: " + getAverageReactionTime() + " ms";
+        avg.textContent = "AVERAGE: " + getAverageReactionTime() + "ms";
         const average = getAverageReactionTime();
         const bestTime = Math.min(...reactionTimes);
 
@@ -51,8 +51,8 @@ function nextRound(){
 
         displayHistory();
 
-        avg.textContent = "AVERAGE: " + average + " ms";
-        best.textContent = "BEST: " + bestTime + " ms";
+        avg.textContent = "AVERAGE: " + average + "ms";
+        best.textContent = "BEST: " + bestTime + "ms";
         return;
     }
 
@@ -101,7 +101,7 @@ document.addEventListener("keydown", function (event) {
     last.textContent = "LAST: " + reactionTime + "ms";
     avg.textContent = "AVERAGE: " + 0 + "ms";
     const bestTime = Math.min(...reactionTimes);
-    best.textContent = "BEST: " + bestTime + " ms";
+    best.textContent = "BEST: " + bestTime + "ms";
 
     nextRound();
 })
@@ -122,7 +122,7 @@ function displayHistory() {
 
         entry.textContent =
             "Attempt " + (i + 1) +
-            " - Average: " + attempt.average + " ms";
+            " - Average: " + attempt.average + "ms";
 
         history.appendChild(entry);
     }
@@ -137,7 +137,7 @@ resetTraining.addEventListener("click", function(){
     command.textContent = "Ready?";
     last.textContent = "LAST: " + 0 + "ms";
     avg.textContent = "AVERAGE: " + 0 + "ms";
-    best.textContent = "BEST: " + bestTime + " ms";
+    best.textContent = "BEST: " + bestTime + "ms";
     startTraining.disabled = false;
 })
 
