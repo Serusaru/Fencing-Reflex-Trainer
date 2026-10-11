@@ -87,14 +87,10 @@ document.addEventListener("keydown", function (event) {
     avg.textContent = "AVERAGE: " + 0;
     const bestTime = Math.min(...reactionTimes);
     best.textContent = "BEST: " + bestTime + " ms";
-    
+
     nextRound();
+    
 });
-
-
-
-    
-    
 
 resetTraining.addEventListener("click", function(){
     console.log("Training Reseted")
@@ -103,4 +99,3 @@ resetTraining.addEventListener("click", function(){
 clearHistory.addEventListener("click", function(){
     console.log("History Cleared")
 })
-
