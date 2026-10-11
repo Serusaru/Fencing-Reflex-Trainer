@@ -34,7 +34,7 @@ startTraining.addEventListener("click", function(){
 function nextRound(){
     if (currentRound >= totalRounds){
         command.textContent = "Training Complete!";
-        gameRound.textContent = totalRounds + "/" + totalRounds;
+        gameRound.textContent = "ROUND " + totalRounds + "/" + totalRounds;
         startTraining.disabled = false;
         waitforKey = false;
         avg.textContent = "AVERAGE: " + getAverageReactionTime() + " ms";
@@ -53,7 +53,7 @@ function nextRound(){
         const randomMove = moves[randomIndex];
 
         command.textContent = randomMove;
-        gameRound.textContent = currentRound + "/" + totalRounds;
+        gameRound.textContent = "ROUND " + currentRound + "/" + totalRounds;
 
         reactionStart = Date.now();
         waitforKey = true;
@@ -83,8 +83,8 @@ document.addEventListener("keydown", function (event) {
     
     waitforKey = false;
 
-    last.textContent = "LAST: " + reactionTime;
-    avg.textContent = "AVERAGE: " + 0;
+    last.textContent = "LAST: " + reactionTime + "ms";
+    avg.textContent = "AVERAGE: " + 0 + "ms";
     const bestTime = Math.min(...reactionTimes);
     best.textContent = "BEST: " + bestTime + " ms";
 
@@ -93,7 +93,11 @@ document.addEventListener("keydown", function (event) {
 });
 
 resetTraining.addEventListener("click", function(){
-    console.log("Training Reseted")
+    gameRound.textContent = "ROUND " + 0 + "/" + totalRounds;
+    command.textContent = "Ready?";
+    last.textContent = "LAST: " + 0 + "ms";
+    avg.textContent = "AVERAGE: " + 0 + "ms";
+    best.textContent = "BEST: " + bestTime + " ms";
 })
 
 clearHistory.addEventListener("click", function(){
