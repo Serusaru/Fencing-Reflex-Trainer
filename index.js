@@ -8,11 +8,13 @@ const last = document.getElementById("last");
 const avg = document.getElementById("avg");
 const best = document.getElementById("best");
 
+
 let reactionStart = 0;
 let currentRound = 0;
 let totalRounds = 0;
 let waitforKey = false;
 let reactionTimes = [];
+let trainingHistory = [];
 let randomTime;
 
 command.textContent = "Ready?";
@@ -25,7 +27,7 @@ startTraining.addEventListener("click", function(){
     return;
     }
     
-    currentRound = 0
+    currentRound = 0;
     reactionTimes = [];
     startTraining.disabled = true;
     nextRound();
@@ -38,11 +40,24 @@ function nextRound(){
         startTraining.disabled = false;
         waitforKey = false;
         avg.textContent = "AVERAGE: " + getAverageReactionTime() + " ms";
+        const average = getAverageReactionTime();
+        const bestTime = Math.min(...reactionTimes);
+
+        trainingHistory.push({
+            average: average,
+            best: bestTime,
+            rounds: totalRounds
+        });
+
+        displayHistory();
+
+        avg.textContent = "AVERAGE: " + average + " ms";
+        best.textContent = "BEST: " + bestTime + " ms";
         return;
     }
 
     waitforKey = false;
-    command.textContent = "Wait..."
+    command.textContent = "Wait...";
 
     randomTime = Math.random() * 2000 + 1000;
 
@@ -89,17 +104,46 @@ document.addEventListener("keydown", function (event) {
     best.textContent = "BEST: " + bestTime + " ms";
 
     nextRound();
-    
-});
+})
+
+function displayHistory() {
+    const history = document.getElementById("historyList");
+
+    if (trainingHistory.length === 0) {
+        history.innerHTML = "<p>No attempts yet</p>";
+        return;
+    }
+
+    history.innerHTML = "";
+
+    for (let i = 0; i < trainingHistory.length; i++) {
+        const attempt = trainingHistory[i];
+        const entry = document.createElement("p");
+
+        entry.textContent =
+            "Attempt " + (i + 1) +
+            " - Average: " + attempt.average + " ms";
+
+        history.appendChild(entry);
+    }
+}
 
 resetTraining.addEventListener("click", function(){
+    currentRound = 0;
+    totalRounds = 0;
+    waitforKey = false;
+    reactionTimes = [];
     gameRound.textContent = "ROUND " + 0 + "/" + totalRounds;
     command.textContent = "Ready?";
     last.textContent = "LAST: " + 0 + "ms";
     avg.textContent = "AVERAGE: " + 0 + "ms";
     best.textContent = "BEST: " + bestTime + " ms";
+    startTraining.disabled = false;
 })
 
 clearHistory.addEventListener("click", function(){
-    attempt.textContent = "No attempts yet"
+    trainingHistory = [];
+    displayHistory();
 })
+
+
