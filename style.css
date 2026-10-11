@@ -145,40 +145,33 @@ body {
 
 #history {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: flex-start;
     font-family: 'Inter', sans-serif;
+    margin-top: 30px;
 }
 
-#history h2 {
+#historyText {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     margin: 0;
 }
 
-#history button {
+#historyText > p {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+#clear {
+    align-self: flex-start;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
     font-size: 11px;
     padding: 4px 8px;
     border-radius: 6px;
     cursor: pointer;
-}
-
-#history {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-family: 'Inter', sans-serif;
-}
-
-#historyText p {
-    margin: 0;
-}
-
-#attempt {
-    margin-top: 5px !important;
-    font-size: 14px;
-}
-
-#clear {
-    font-size: 11px;
-    padding: 4px 8px;
-    border-radius: 6px;
+    flex-shrink: 0;
 }
