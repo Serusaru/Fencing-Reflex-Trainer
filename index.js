@@ -101,5 +101,5 @@ resetTraining.addEventListener("click", function(){
 })
 
 clearHistory.addEventListener("click", function(){
-    console.log("History Cleared")
+    attempt.textContent = "No attempts yet"
 })
